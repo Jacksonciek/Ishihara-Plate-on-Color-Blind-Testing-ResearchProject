@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <title>Document</title> -->
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="stylesheet" href="css/buttonawal.css">
+</head>
+
+<body>
+
+	<div class="test-area col-xs-12 bg-white px-10 py-5 mt-4 mb-4 rounded-xl text-center justify-center flex items-center pr-20"
+		ng-show="inProgress">
+		<div ng-show="!testOver" class="flex flex-col md:flex-row gap-8 justify-center text-center items-center">
+			<div class="flex" id="image">
+				<canvas class="col-xs-12" id="STAGE" width="440" height="440"></canvas>
+			</div>
+			<div class="flex flex-col pl-7">
+				<div class="question flex flex-col font-bold text-2xl mb-6 text-black text-center">What did you see?
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<ul id="options">
+							<input type="text" class="efeksubmit text-black" id="f" name="answer"
+								placeholder="Your answer" style="width:100%" autofocus required />
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 text-center">
+						<button id="submit_button" ng-click="checkAnswer()"
+							class="animatego mt-6 px-10 py-3">Submit</button>
+					</div>
+					<div class="col-xs-12 text-center">
+						{{many}}/{{problem}}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div ng-show="testOver" class="text-black">
+			<h2 class="pl-12 text-center text-xl font-black">TEST IS OVER !!</h2>
+			<div class="row">
+				<div class="col-xs-8 text-center mt-4 flex-col flex justify-center">
+					<div class="row pl-12 ">
+						<!-- <button class="btn btn-success " ng-click="reset()">Re-do Test again</button> -->
+						<button class="learn-more" id="bulat" ng-click="reset()">
+							<span class="circleBulat" aria-hidden="true">
+								<span class="icon arrow"></span>
+							</span>
+							<span class="button-text-bulat">Re-do Test again</span>
+						</button>
+					</div>
+					<div class="row mt-4" style="margin-top:10px; margin-bottom:10px ">
+						<table class="">
+							<tr class="">
+								<th class="text-center ">Correct Answer</th>
+								<th class="text-center">Your Answer</th>
+								<th class="text-center">Status</th>
+							</tr>
+							<tr ng-repeat="x in result">
+								<td>{{x.cor_ans}}</td>
+								<td>{{x.usr_ans}}</td>
+								<td>{{x.status}}</td>
+							</tr>
+							<tr>
+								<td> Final Result </td>
+								<td> </td>
+								<td> {{score}}% </td>
+							</tr>
+						</table>
+					</div>
+					<div class="row flex items-center justify-center">
+						<button class="animated-button-last rounded-2xl py-2 px-7 mt-4 mb-4 ml-9" type="submit">
+
+
+							<a href="https://docs.google.com/forms/d/1N5epabY2B2Swfx9rF0CGpqut-pWu18IkDOm1eJ6vtKo/viewform"
+								class="btn btn-success"><span class="text">Submit your response</span></a>
+							<span class="circle"></span>
+						</button>
+					</div>
+				</div>
+				<div class="col-xs-2 text-center "></div>
+
+			</div>
+		</div>
+
+
+	</div>
+
+	<div class="intro utksisi rounded-3xl flex flex-col bg-[#fff] text-black px-16 mb:mt-0 mt-10 mb:px-8 py-24 mb:py-32 items-center justify-center"
+		ng-show="!inProgress">
+		<div class="typewriter pb-[90%] mb:pb-40 absolute">
+			<!-- <h1 class="z-9">Try one of our tests now !!</h1> -->
+			<h1>Try one of our tests now !!</h1>
+		</div>
+		<div class="flex flex-col md:flex-row gap-8 ">
+
+			<button id="starTest" ng-click="start(0)" class="animated-button btn btn-success text-center">
+				<span>Start Standard Test</span>
+				<span></span>
+			</button>
+
+			<button id="starTest" ng-click="start(1)" class="animated-button btn btn-success text-center">
+				<span>Start Protanopia Test</span>
+				<span></span>
+			</button>
+
+			<button id="starTest" ng-click="start(2)" class="animated-button btn btn-success text-center">
+				<span>Start Deuteranopia Test</span>
+				<span></span>
+			</button>
+
+			<button id="starTest" ng-click="start(3)" class="animated-button btn btn-success text-center">
+				<span>Start Tritanopia Test</span>
+				<span></span>
+			</button>
+
+		</div>
+	</div>
+
+</body>
+
+</html>

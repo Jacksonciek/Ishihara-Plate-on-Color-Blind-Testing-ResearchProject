@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html ng-app="CBApp">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Simple Color Blind Test</title>
+
+
+	<script src="lib/jquery.min.js"></script>
+	<script src="lib/angular.min.js.map"></script>
+	<script src="lib/angular-ui-router.min.js"></script>
+	<script src="js/ishihara_plate_tahap_dummy.js"></script>
+	<script src="js/app.js"></script>
+	<!-- <script src="js/Navbar/navbar.js"></script> -->
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="stylesheet" href="css/navbar.css">
+	<link rel="stylesheet" href="css/judulUtama.css">
+	<!-- <link rel="stylesheet" href="css/style.css" /> -->
+	<!-- <link rel="stylesheet" href="css/bootstrap.min.css" /> -->
+
+</head>
+
+<body>
+	<!-- <div class="header col-sm-12">
+		<h3 class="title col-sm-3">Simple Color Blind Test </h3>
+		<div class="col-sm-5" style="padding:10px">
+		</div>
+		<div class="col-sm-4" style="padding:10px">
+			<a ui-sref="home">
+				<div class="col-sm-3 btn btn-primary " style="  margin: 0px 10px 0px 0px">Home</div>
+			</a>
+			<a ui-sref="guide">
+				<div class="col-sm-3 btn btn-primary " style="  margin: 0px 10px 0px 0px">Guide</div>
+			</a>
+			<a ui-sref="about">
+				<div class="col-sm-3 btn btn-primary " style="  margin: 0px 10px 0px 0px">About</div>
+			</a>
+		</div>
+	</div> -->
+	<header class="header " ng-controller="NavbarController">
+		<nav class="nav  container rounded-3xl">
+
+			<div class="nav__data">
+				<a href="#" class="nav__logo">
+					<i class="ri-code-s-slash-line"></i> Color Blind Test
+				</a>
+				<div class="nav__toggle" ng-click="toggleMenu()">
+					<!-- Show menu icon when menu is closed -->
+					<i class="ri-menu-line nav__toggle-menu" ng-class="{'show-icon': !isMenuOpen}"></i>
+					<!-- Show close icon when menu is open -->
+					<i class="ri-close-line nav__toggle-close" ng-class="{'show-icon': isMenuOpen}"></i>
+				</div>
+			</div>
+
+			<!-- NAV MENU -->
+			<div class="nav__menu" id="nav-menu" ng-class="{'show-menu': isMenuOpen}">
+				<ul class="nav__list">
+					<li>
+						<a ui-sref="home" class="nav__link">Home</a>
+					</li>
+					<li>
+						<a ui-sref="guide" class="nav__link">Guide</a>
+					</li>
+					<li>
+						<a ui-sref="about" class="nav__link">About</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<!-- <div class="text-white text-center bg-[#2f2f2f] pt-40">
+		<h1>Welcome to the Color Blind Test App</h1>
+	</div> -->
+	<div class="content flex justify-center items-center text-center">
+		<h1 class="title text-6xl w-[80%] pt-32">Welcome to the Color Blind Test App
+			<div class="aurora">
+				<div class="aurora__item"></div>
+				<div class="aurora__item"></div>
+				<div class="aurora__item"></div>
+				<div class="aurora__item"></div>
+			</div>
+		</h1>
+	</div>
+	<div class="overflow-hidden " ui-view>
+	</div>
+	<div class="md:mt-0 mt-5 mb-5 text-center">
+		<h3>Simple Color Blind Test By</h3>
+		<h3>Eka Jaya Harsono | Jackson Lawrence | Wency Yvonney Wijaya</h3>
+	</div>
+</body>
+
+
+</html>
